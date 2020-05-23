@@ -5,6 +5,9 @@ object Assignment extends App {
   def volume(r:Double)=(4/3)*math.Pi*r*r*r
   println(volume(5))
   
-  def cost(n:Double)=n*24.95*0.6+3*50+(n-50)*0.75
+  def cost(n:Double)=n<50 match{
+   case true => n*24.95*0.6+3*n
+   case false => n*24.95*0.6+3*50+(n-50)*0.75
+  }
   println(cost(60))
 }
